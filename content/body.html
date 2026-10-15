@@ -1,0 +1,1018 @@
+<!-- Global Scroll Reading Progress Bar -->
+<div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+<div class="site-container">
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="brand-logo-wrap">
+      <a href="#" aria-label="Heniten Construction PLC">
+        <img src="assets/images/logo-white.svg" alt="Heniten Construction PLC" class="brand-logo logo-light">
+        <img src="assets/images/logo.svg" alt="Heniten Construction PLC" class="brand-logo logo-dark">
+      </a>
+    </div>
+
+    <nav class="primary-nav" aria-label="Main Navigation">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#calculator" class="nav-link">Estimator</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+251991999501" class="nav-call-btn" title="Call Addis Ababa HQ: +251 991 999 501" aria-label="Call +251 991 999 501">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      </a>
+      <button type="button" class="btn btn-primary btn-nav-quote" data-open-rfp="header">Request Quote</button>
+      <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <img src="assets/images/logo.svg" alt="Heniten Construction" class="drawer-logo">
+        <button type="button" class="drawer-close-btn" id="closeDrawerBtn" aria-label="Close Navigation">×</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#about" class="drawer-link">About</a>
+        <a href="#services" class="drawer-link">Services</a>
+        <a href="#projects" class="drawer-link">Projects</a>
+        <a href="#calculator" class="drawer-link">Cost Estimator</a>
+        <a href="#process" class="drawer-link">How We Work</a>
+        <a href="#why-us" class="drawer-link">Standards</a>
+        <a href="#contact" class="drawer-link">Contact</a>
+      </nav>
+      <div class="drawer-footer">
+        <a href="tel:+251991999501" class="drawer-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          +251 991 999 501
+        </a>
+        <button type="button" class="btn btn-primary btn-sm" style="width:100%" data-open-rfp="mobile-drawer">Request a Quotation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       HERO SECTION: REAL-LIFE DAYLIGHT ARCHITECTURAL SHOWCASE
+       ========================================================================== -->
+  <section class="hero-section" id="about">
+    <!-- Photorealistic Cinematic Slides with Dynamic Parallax & Motion -->
+    <div class="hero-cinematic-bg" id="heroCinematicReel">
+      <div class="cinematic-slide active" id="slideCam1" style="background-image: url('assets/images/hero-daylight-crane.webp');"></div>
+      <div class="cinematic-slide" id="slideCam2" style="background-image: url('assets/images/hero-daylight-fuel.webp');"></div>
+      <div class="cinematic-slide" id="slideCam3" style="background-image: url('assets/images/hero-daylight-engineers.webp');"></div>
+    </div>
+
+    <!-- Atmospheric Gradient Vignette Overlay for Crisp Typography -->
+    <div class="hero-cinematic-overlay" aria-hidden="true"></div>
+
+    <!-- Real-Time Atmospheric Sunlit Motes & Lens Particulate Canvas -->
+    <canvas id="sparkCanvas" aria-hidden="true"></canvas>
+
+    <!-- Modern Slideshow Controls & Progress Indicators -->
+    <div class="hero-slideshow-nav" aria-label="Hero Slideshow Controls">
+      <div class="slideshow-pagination">
+        <button type="button" class="slide-indicator active" data-slide-index="0" aria-label="Go to Slide 1: High-Rise Construction">
+          <span class="indicator-number">01</span>
+          <span class="indicator-bar"><span class="indicator-progress"></span></span>
+          <span class="indicator-title">High-Rise Tower Crane</span>
+        </button>
+        <button type="button" class="slide-indicator" data-slide-index="1" aria-label="Go to Slide 2: Fuel Station Canopies">
+          <span class="indicator-number">02</span>
+          <span class="indicator-bar"><span class="indicator-progress"></span></span>
+          <span class="indicator-title">Modern Fuel Station</span>
+        </button>
+        <button type="button" class="slide-indicator" data-slide-index="2" aria-label="Go to Slide 3: Engineering Field Operations">
+          <span class="indicator-number">03</span>
+          <span class="indicator-bar"><span class="indicator-progress"></span></span>
+          <span class="indicator-title">Civil Engineering & QA</span>
+        </button>
+      </div>
+
+      <div class="slideshow-arrow-btns">
+        <button type="button" class="slide-arrow-btn" id="prevSlideBtn" aria-label="Previous Slide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="slide-arrow-btn" id="nextSlideBtn" aria-label="Next Slide">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Hero Main Container: Balanced Architecture -->
+    <div class="hero-grid-wrapper">
+      <div class="hero-content">
+        <div class="hero-location-pill">
+          <span class="pulse-beacon-dot"></span>
+          <span>ADDIS ABABA · ETHIOPIA · SINCE 2013</span>
+        </div>
+        <h1 class="hero-title">
+          Building the future with <span class="highlight text-gradient-gold">strength</span> and precision.
+        </h1>
+        <p class="hero-description">
+          Grade 5 (BC-6) licensed general building and civil contractor delivering commercial office towers, industrial complexes, luxury residential enclaves, and over 50 turnkey fuel station facilities with uncompromised structural integrity and schedule discipline.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary btn-lg">View Our Projects →</a>
+          <button type="button" class="btn btn-secondary btn-lg" data-open-rfp="hero">Request a Quotation</button>
+          <a href="#calculator" class="btn btn-teal btn-lg">⚡ Estimate Cost</a>
+        </div>
+
+        <div class="hero-trust-tagline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>Grade 5 Licensed (BC-6) · EBCS, BS, ASTM & AASHTO Quality Certified</span>
+        </div>
+      </div>
+
+      <!-- Modern Interactive Feature Showcase Card (Right Side Balance) -->
+      <div class="hero-featured-card-wrapper reveal-scale">
+        <div class="hero-featured-card">
+          <div class="featured-card-header">
+            <div class="featured-badge">
+              <span class="live-dot"></span>
+              <span>LANDMARK SHOWCASE</span>
+            </div>
+            <span class="featured-year">SINCE 2013</span>
+          </div>
+
+          <div class="featured-card-body">
+            <h3 class="featured-title">TAF Headquarters & Petroleum Depots</h3>
+            <p class="featured-desc">Multi-storey corporate headquarters, clear-span industrial canopies, and nationwide fuel distribution infrastructure.</p>
+            
+            <div class="featured-metrics-grid">
+              <div class="metric-item">
+                <span class="metric-val">50+</span>
+                <span class="metric-lbl">Canopies Built</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">100%</span>
+                <span class="metric-lbl">Zero LTI Safety</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">BC-6</span>
+                <span class="metric-lbl">Grade 5 License</span>
+              </div>
+              <div class="metric-item">
+                <span class="metric-val">EBCS</span>
+                <span class="metric-lbl">Certified Quality</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="featured-card-footer">
+            <button type="button" class="btn btn-primary btn-sm" data-open-rfp="hero-telemetry" style="width:100%">
+              Request Project Proposal →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Live Statistics Strip -->
+    <div class="stats-strip stagger-container">
+      <div class="stat-box reveal-up">
+        <div class="stat-number">2013</div>
+        <div class="stat-label">Established</div>
+        <div class="stat-subtext">Over a decade of excellence</div>
+      </div>
+      <div class="stat-box reveal-up">
+        <div class="stat-number" data-counter-target="50" data-counter-suffix="+">50+</div>
+        <div class="stat-label">Fuel Station Canopies</div>
+        <div class="stat-subtext">Nationwide petroleum network</div>
+      </div>
+      <div class="stat-box reveal-up">
+        <div class="stat-number" data-counter-target="9" data-counter-suffix="+">9+</div>
+        <div class="stat-label">Major Landmark Projects</div>
+        <div class="stat-subtext">Multi-storey & industrial</div>
+      </div>
+      <div class="stat-box reveal-up">
+        <div class="stat-number">BC-6</div>
+        <div class="stat-label">Grade 5 Contractor</div>
+        <div class="stat-subtext">General Building & Civil license</div>
+      </div>
+      <div class="stat-box reveal-up">
+        <div class="stat-number" data-counter-target="100" data-counter-suffix="%">100%</div>
+        <div class="stat-label">Zero LTI Safety Record</div>
+        <div class="stat-subtext">Strict HSE protocols applied</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TRUSTED CLIENTS & STAKEHOLDERS BAR
+       ========================================================================== -->
+  <section class="trust-bar reveal-up" aria-label="Trusted Partners">
+    <div class="trust-label">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#FDB913"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      <span>TRUSTED BY INDUSTRY LEADERS:</span>
+    </div>
+    <div class="trust-logos">
+      <div class="client-item"><span class="client-dot"></span> TAF ENERGIES</div>
+      <div class="client-item"><span class="client-dot"></span> SOTEN INDUSTRIES</div>
+      <div class="client-item"><span class="client-dot"></span> TEAM TRANSPORT</div>
+      <div class="client-item"><span class="client-dot"></span> INDUSTRIAL PARKS (IPDC)</div>
+      <div class="client-item"><span class="client-dot"></span> ETHIOPIAN ICT PARK</div>
+      <div class="client-item"><span class="client-dot"></span> NATIONAL AVIATION FUEL</div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICES SECTION ("WHAT WE BUILD")
+       ========================================================================== -->
+  <section class="services-section" id="services">
+    <div class="section-header reveal-up">
+      <div>
+        <div class="section-eyebrow">CAPABILITIES & SPECIALIZATIONS</div>
+        <h2 class="section-title">Engineered to endure. Built to perform.</h2>
+      </div>
+      <p class="section-subtitle">
+        From initial feasibility and value engineering to turnkey handover, Heniten provides a single accountable partner across civil, commercial, and energy infrastructure.
+      </p>
+    </div>
+
+    <div class="services-accordion-list reveal-up">
+      <a class="service-row" href="#" data-service="01">
+        <span class="service-number">01</span>
+        <span class="service-title">Building Contracting & Civil Engineering</span>
+        <span class="service-desc">Construction management, planning, detailed BOQ estimation, foundation engineering, and certified site supervision.</span>
+        <span class="service-arrow">→</span>
+      </a>
+
+      <a class="service-row" href="#" data-service="02">
+        <span class="service-number">02</span>
+        <span class="service-title">Commercial Construction</span>
+        <span class="service-desc">Multi-storey corporate office towers (G+6 to G+12), commercial plazas, retail banks, and modern acoustic facade installations.</span>
+        <span class="service-arrow">→</span>
+      </a>
+
+      <a class="service-row" href="#" data-service="03">
+        <span class="service-number">03</span>
+        <span class="service-title">Industrial & Large-Span Warehousing</span>
+        <span class="service-desc">Heavy manufacturing plants, clear-span structural steel trusses, 40MPa laser-screeded factory slabs, and trailer loading docks.</span>
+        <span class="service-arrow">→</span>
+      </a>
+
+      <a class="service-row" href="#" data-service="04">
+        <span class="service-number">04</span>
+        <span class="service-title">Fuel Station Facilities & Forecourt Civil Works</span>
+        <span class="service-desc">Architectural steel canopies, underground multi-product tanks, containment sumps, car wash bays, and heavy concrete forecourts.</span>
+        <span class="service-arrow">→</span>
+      </a>
+
+      <a class="service-row" href="#" data-service="05">
+        <span class="service-number">05</span>
+        <span class="service-title">Pre-Construction & Feasibility Studies</span>
+        <span class="service-desc">Geotechnical soil testing, municipal permit approvals, architectural review, value engineering, and life-cycle cost analysis.</span>
+        <span class="service-arrow">→</span>
+      </a>
+
+      <a class="service-row" href="#" data-service="06">
+        <span class="service-number">06</span>
+        <span class="service-title">Design-Build EPC Accountability</span>
+        <span class="service-desc">Unified architects, structural engineers, and site managers under one contract with guaranteed price and schedule discipline.</span>
+        <span class="service-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEATURED PROJECTS PORTFOLIO (NO PLACEHOLDERS!)
+       ========================================================================== -->
+  <section class="projects-section" id="projects">
+    <div class="section-header reveal-up">
+      <div>
+        <div class="section-eyebrow">DELIVERED INFRASTRUCTURE</div>
+        <h2 class="section-title">Selected Landmark Projects</h2>
+      </div>
+      <div class="filter-nav">
+        <button type="button" class="filter-btn active" data-filter="all">All Sectors</button>
+        <button type="button" class="filter-btn" data-filter="aviation">Aviation & Fuel</button>
+        <button type="button" class="filter-btn" data-filter="commercial">Commercial</button>
+        <button type="button" class="filter-btn" data-filter="industrial">Industrial</button>
+        <button type="button" class="filter-btn" data-filter="residential">Residential</button>
+      </div>
+    </div>
+
+    <div class="projects-grid stagger-container">
+      <!-- Project 1: Jet A-1 Depot (Wide 8 Columns) -->
+      <div class="project-card tilt-card reveal-scale col-8" data-category="aviation" data-project-id="aviation-depot">
+        <div class="project-image-wrap">
+          <img src="assets/images/jet-aviation-depot.webp" alt="Jet A-1 Aviation Fuel Depot" class="project-img" loading="lazy">
+          <div class="project-quick-cta" title="View Case Study">↗</div>
+          <div class="project-overlay">
+            <div class="project-meta-pill">AVIATION INFRASTRUCTURE · BOLE, ADDIS ABABA</div>
+            <h3 class="project-title">Jet A-1 Aviation Fuel Depot & Terminal</h3>
+            <div class="project-details-row">
+              <span class="project-spec-item"><strong>Client:</strong> Aviation Logistics</span>
+              <span class="project-spec-item"><strong>Capacity:</strong> 4.8M Liters</span>
+              <span class="project-spec-item"><strong>Status:</strong> Commissioned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: SOTEN Industries (Col 4) -->
+      <div class="project-card tilt-card reveal-scale col-4" data-category="industrial" data-project-id="soten-factory">
+        <div class="project-image-wrap">
+          <img src="assets/images/soten-factory.webp" alt="SOTEN Industries Factory Complex" class="project-img" loading="lazy">
+          <div class="project-quick-cta" title="View Case Study">↗</div>
+          <div class="project-overlay">
+            <div class="project-meta-pill">INDUSTRIAL · GELAN</div>
+            <h3 class="project-title">SOTEN Manufacturing Complex</h3>
+            <div class="project-details-row">
+              <span class="project-spec-item"><strong>Span:</strong> 42m Steel Truss</span>
+              <span class="project-spec-item"><strong>Area:</strong> 26,000 m²</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: TAF Energies HQ (Col 4) -->
+      <div class="project-card tilt-card reveal-scale col-4" data-category="commercial" data-project-id="taf-headquarters">
+        <div class="project-image-wrap">
+          <img src="assets/images/taf-headquarters.webp" alt="TAF Energies Head Office G+6" class="project-img" loading="lazy">
+          <div class="project-quick-cta" title="View Case Study">↗</div>
+          <div class="project-overlay">
+            <div class="project-meta-pill">COMMERCIAL · BOLE CHINA STREET</div>
+            <h3 class="project-title">TAF Energies HQ, G+6 Tower</h3>
+            <div class="project-details-row">
+              <span class="project-spec-item"><strong>Floors:</strong> 7 Levels + 2 Basements</span>
+              <span class="project-spec-item"><strong>Facade:</strong> Curtain Glazing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Fuel Station Network (Col 4) -->
+      <div class="project-card tilt-card reveal-scale col-4" data-category="aviation" data-project-id="dealers-network">
+        <div class="project-image-wrap">
+          <img src="assets/images/dealers-fuel-station.webp" alt="Turnkey Fuel Station Network" class="project-img" loading="lazy">
+          <div class="project-quick-cta" title="View Case Study">↗</div>
+          <div class="project-overlay">
+            <div class="project-meta-pill">RETAIL PETROLEUM · NATIONWIDE</div>
+            <h3 class="project-title">Dealers Fuel Station Network</h3>
+            <div class="project-details-row">
+              <span class="project-spec-item"><strong>Canopies:</strong> 50+ Stations</span>
+              <span class="project-spec-item"><strong>Scope:</strong> Turnkey Forecourt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Residential Complex (Col 4) -->
+      <div class="project-card tilt-card reveal-scale col-4" data-category="residential" data-project-id="residential-complex">
+        <div class="project-image-wrap">
+          <img src="assets/images/residential-complex.webp" alt="Luxury Residential Complex" class="project-img" loading="lazy">
+          <div class="project-quick-cta" title="View Case Study">↗</div>
+          <div class="project-overlay">
+            <div class="project-meta-pill">RESIDENTIAL · BOLE ENCLAVE</div>
+            <h3 class="project-title">Bole Luxury Multi-Family Estate</h3>
+            <div class="project-details-row">
+              <span class="project-spec-item"><strong>Units:</strong> 48 Luxury Homes</span>
+              <span class="project-spec-item"><strong>Standard:</strong> EBCS-8 Seismic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE QUOTATION & COST CALCULATOR
+       ========================================================================== -->
+  <section class="calculator-section" id="calculator">
+    <div class="section-header reveal-up">
+      <div>
+        <div class="section-eyebrow" style="color:var(--gold-400)">INTERACTIVE BUDGET MODELER</div>
+        <h2 class="section-title" style="color:#FFFFFF">Project Quotation & Scope Estimator</h2>
+      </div>
+      <p class="section-subtitle" style="color:var(--text-light-muted)">
+        Configure your project parameters to get an immediate indicative construction scope estimate based on current Ethiopian building rates and engineering benchmarks.
+      </p>
+    </div>
+
+    <div class="calc-grid">
+      <!-- Left Configurator Form -->
+      <div class="calc-panel reveal-left">
+        <div class="calc-step-title">
+          <span class="step-num">1</span>
+          <span>Select Sector & Project Category</span>
+        </div>
+
+        <div class="project-type-options">
+          <div class="type-option-card selected" data-type="fuel-station">
+            <div class="type-option-icon">⛽</div>
+            <div class="type-option-name">Fuel Station Forecourt</div>
+          </div>
+          <div class="type-option-card" data-type="commercial">
+            <div class="type-option-icon">🏢</div>
+            <div class="type-option-name">Commercial G+N Tower</div>
+          </div>
+          <div class="type-option-card" data-type="industrial">
+            <div class="type-option-icon">🏭</div>
+            <div class="type-option-name">Factory / Warehouse</div>
+          </div>
+          <div class="type-option-card" data-type="residential">
+            <div class="type-option-icon">🏡</div>
+            <div class="type-option-name">Luxury Residential</div>
+          </div>
+          <div class="type-option-card" data-type="aviation">
+            <div class="type-option-icon">✈️</div>
+            <div class="type-option-name">Aviation / Depot</div>
+          </div>
+        </div>
+
+        <div class="calc-step-title">
+          <span class="step-num">2</span>
+          <span>Estimated Built-Up Area / Footprint</span>
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="slider-label">Total Floor / Forecourt Area:</span>
+            <span class="slider-value-display" id="calcAreaDisplay">2,400 m²</span>
+          </div>
+          <input type="range" class="calc-range-slider" id="calcAreaSlider" min="300" max="15000" step="100" value="2400">
+        </div>
+
+        <div class="calc-step-title">
+          <span class="step-num">3</span>
+          <span>Included Engineering Scope</span>
+        </div>
+
+        <div class="scope-options-grid">
+          <label class="scope-checkbox-label">
+            <input type="checkbox" class="scope-checkbox" data-scope="turnkey" checked>
+            <span>Turnkey EPC Management</span>
+          </label>
+          <label class="scope-checkbox-label">
+            <input type="checkbox" class="scope-checkbox" data-scope="structural" checked>
+            <span>Civil & Structural Shell</span>
+          </label>
+          <label class="scope-checkbox-label">
+            <input type="checkbox" class="scope-checkbox" data-scope="mep" checked>
+            <span>Electrical, MEP & Utilities</span>
+          </label>
+          <label class="scope-checkbox-label">
+            <input type="checkbox" class="scope-checkbox" data-scope="canopy" checked>
+            <span>Steel Canopies / Trusses</span>
+          </label>
+          <label class="scope-checkbox-label" style="grid-column: span 2">
+            <input type="checkbox" class="scope-checkbox" data-scope="engineering" checked>
+            <span>Pre-Construction Feasibility & EBCS Permit Approvals</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Right Summary & RFP CTA -->
+      <div class="calc-summary-panel reveal-right">
+        <div>
+          <div class="summary-header">
+            <div class="estimate-headline">Estimated Budget Range</div>
+            <div class="estimate-figure" id="calcResultFigure">ETB 92.7M - ETB 108.9M</div>
+            <div class="estimate-subnote">Based on Q3 2026 material indices, certified concrete & steel prices in Addis Ababa.</div>
+          </div>
+
+          <div class="summary-breakdown-list">
+            <div class="breakdown-item">
+              <span class="breakdown-label">Project Type</span>
+              <span class="breakdown-val" id="calcBreakdownType">Fuel Station Facility</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">Floor Area</span>
+              <span class="breakdown-val" id="calcBreakdownArea">2,400 m²</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">Typical Delivery Timeline</span>
+              <span class="breakdown-val" id="calcBreakdownTimeline">4 - 7 Months</span>
+            </div>
+            <div class="breakdown-item">
+              <span class="breakdown-label">Contractor Accreditation</span>
+              <span class="breakdown-val" id="calcBreakdownLicense">BC-6 Grade 5 Supervision</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <button type="button" class="btn btn-secondary btn-sm" id="calcCurrencyToggle">Show in USD ($)</button>
+          <button type="button" class="btn btn-primary btn-lg" data-open-rfp="from-calc">Submit Scope for Official Tender BOQ →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       HOW WE WORK - 4-STAGE ENGINE
+       ========================================================================== -->
+  <section class="process-section" id="process">
+    <div class="section-header reveal-up">
+      <div>
+        <div class="section-eyebrow" style="color:var(--gold-400)">SYSTEMATIC EXECUTION</div>
+        <h2 class="section-title">How We Deliver Excellence</h2>
+      </div>
+      <p class="section-subtitle" style="color:var(--text-light-muted)">
+        A disciplined, stage-gated construction methodology ensuring zero budget slippage and strict code compliance from site survey to handover.
+      </p>
+    </div>
+
+    <!-- Scroll-Linked Laser Timeline Rail -->
+    <div class="process-track-container reveal-scale" aria-hidden="true">
+      <div class="process-track-line" id="processLaserTrack">
+        <div class="process-track-glow-dot"></div>
+      </div>
+    </div>
+
+    <div class="process-grid stagger-container">
+      <div class="process-step-card tilt-card reveal-up">
+        <div class="step-number">01</div>
+        <h3 class="step-title">Consult & Survey</h3>
+        <p class="step-desc">
+          Geotechnical borehole testing, topography survey, utility mapping, and formulation of an optimized client brief with financial feasibility.
+        </p>
+        <div class="step-deliverables">
+          <span class="step-deliverable-item">✓ Soil Bearing Capacity Report</span>
+          <span class="step-deliverable-item">✓ Initial Feasibility & Cost Model</span>
+        </div>
+      </div>
+
+      <div class="process-step-card tilt-card reveal-up">
+        <div class="step-number">02</div>
+        <h3 class="step-title">Plan & Permit</h3>
+        <p class="step-desc">
+          Architectural coordination, 3D structural analysis, detailed Bill of Quantities (BOQ), and municipal building permit clearance.
+        </p>
+        <div class="step-deliverables">
+          <span class="step-deliverable-item">✓ Detailed Engineering Drawings</span>
+          <span class="step-deliverable-item">✓ City Permit & EBCS Approvals</span>
+        </div>
+      </div>
+
+      <div class="process-step-card tilt-card reveal-up">
+        <div class="step-number">03</div>
+        <h3 class="step-title">Precision Build</h3>
+        <p class="step-desc">
+          Deployment of company-owned heavy equipment, certified batch-plant concrete testing, structural steel fabrication, and on-site QA supervision.
+        </p>
+        <div class="step-deliverables">
+          <span class="step-deliverable-item">✓ Dedicated Resident Engineer</span>
+          <span class="step-deliverable-item">✓ Weekly Milestone Audits</span>
+        </div>
+      </div>
+
+      <div class="process-step-card tilt-card reveal-up">
+        <div class="step-number">04</div>
+        <h3 class="step-title">Commission & Handover</h3>
+        <p class="step-desc">
+          Comprehensive MEP pressure testing, electrical safety verification, as-built documentation, operator training, and 12-month post-handover warranty.
+        </p>
+        <div class="step-deliverables">
+          <span class="step-deliverable-item">✓ Handover Documentation Pack</span>
+          <span class="step-deliverable-item">✓ 1-Year Defects Liability Period</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY HENITEN & HSE CHARTER
+       ========================================================================== -->
+  <section class="why-section" id="why-us">
+    <div class="section-header reveal-up">
+      <div>
+        <div class="section-eyebrow">STANDARDS & REPUTATION</div>
+        <h2 class="section-title">Why Ethiopia’s Top Developers Choose Heniten</h2>
+      </div>
+      <p class="section-subtitle">
+        Combining technical rigor with a modern fleet and deep local supply chain access to deliver demanding civil and building projects on schedule.
+      </p>
+    </div>
+
+    <div class="why-grid stagger-container">
+      <div class="why-card tilt-card reveal-scale">
+        <div class="why-icon">📐</div>
+        <h3 class="why-title">Rigorous Testing Standards</h3>
+        <p class="why-desc">
+          Independent laboratory verification for all concrete pours, rebar tensile strength, and soil compaction compliant with EBCS, BS, ASTM, AASHTO, and ACI codes.
+        </p>
+      </div>
+
+      <div class="why-card highlight-gold tilt-card reveal-scale">
+        <div class="why-icon">🛡️</div>
+        <h3 class="why-title">Zero-Harm HSE Culture</h3>
+        <p class="why-desc">
+          Every site operates under a certified Health, Safety & Environment plan with mandatory PPE, daily toolbox briefings, and continuous zero-accident targets.
+        </p>
+      </div>
+
+      <div class="why-card tilt-card reveal-scale">
+        <div class="why-icon">⏱️</div>
+        <h3 class="why-title">On-Budget Delivery</h3>
+        <p class="why-desc">
+          Strict Critical Path Method (CPM) programming and bulk material procurement ensure your project remains shielded from unexpected price inflation.
+        </p>
+      </div>
+
+      <div class="why-card highlight-gold tilt-card reveal-scale">
+        <div class="why-icon">🤝</div>
+        <h3 class="why-title">One Accountable Partner</h3>
+        <p class="why-desc">
+          We eliminate finger-pointing between designers and builders. Single-source design-build contracts ensure direct responsibility from survey to key handover.
+        </p>
+      </div>
+    </div>
+
+    <!-- HSE Charter Card (Replaces crude placeholder with authoritative policy) -->
+    <div class="hse-charter-box reveal-scale">
+      <div>
+        <div class="badge badge-gold" style="margin-bottom:12px">CORPORATE CHARTER</div>
+        <h3 class="hse-title">Health, Safety & Environmental Commitment</h3>
+        <p class="hse-text">
+          Heniten Construction PLC guarantees that every project is engineered to safeguard workers, the public, and surrounding ecosystems. We enforce strict containment sumps on fuel forecourts, hazardous waste neutralization, and continuous seismic safety compliance in strict accordance with the Ministry of Urban Development and Construction standards.
+        </p>
+        <div class="standards-badges-row">
+          <span class="standard-badge">EBCS-1 TO 10</span>
+          <span class="standard-badge">ASTM COMPLIANT</span>
+          <span class="standard-badge">ACI 318</span>
+          <span class="standard-badge">BS 8110</span>
+          <span class="standard-badge">AASHTO HIGHWAY</span>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);padding:28px;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,0.12);text-align:center">
+        <div style="font-family:var(--font-display);font-size:38px;font-weight:800;color:var(--gold-500);letter-spacing:-0.02em">320K+</div>
+        <div style="font-size:15px;color:#FFFFFF;font-weight:600;margin-top:4px">Safe Man-Hours (2024-2026)</div>
+        <div style="font-size:13px;color:var(--text-light-muted);margin-top:4px">Zero Lost Time Injuries (LTI) Recorded</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CALL TO ACTION STRIP
+       ========================================================================== -->
+  <section class="cta-banner reveal-up">
+    <div>
+      <h2 class="cta-headline">Planning a project? Let's engineer it right.</h2>
+      <p style="margin-top:12px;font-size:18px;font-weight:600;color:var(--navy-900)">
+        Consult our senior civil engineers for an initial site appraisal and feasibility estimate.
+      </p>
+    </div>
+    <div class="cta-right">
+      <p class="cta-text">
+        Tell us your project scope and our Addis Ababa estimating bureau will provide a comprehensive preliminary proposal within one business day.
+      </p>
+      <button type="button" class="btn btn-primary" data-open-rfp="banner" style="background:var(--navy-900);color:#FFFFFF">Request a Quotation →</button>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTACT & HEADQUARTERS LOCATION
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="section-header reveal-up">
+      <div>
+        <div class="section-eyebrow">GET IN TOUCH</div>
+        <h2 class="section-title">Headquarters & Bureau</h2>
+      </div>
+      <p class="section-subtitle">
+        Visit our central offices at TAF Headquarters in Wello Sefer or submit your tender documents online for rapid review.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Details & Map Card -->
+      <div class="contact-info-panel reveal-left">
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div>
+            <h3 class="info-title">Head Office Location</h3>
+            <p class="info-detail">
+              TAF Head Quarter, China Street, Wello Sefer<br>
+              Bole Sub-City, Addis Ababa, Ethiopia
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">📞</div>
+          <div>
+            <h3 class="info-title">Direct Telephone Lines</h3>
+            <p class="info-detail">
+              General Inquiries: <a href="tel:+251991999501" style="font-weight:600;color:var(--navy-850)">+251 991 999 501</a><br>
+              Engineering Bureau: <a href="tel:+251115582794" style="font-weight:600;color:var(--navy-850)">+251 115 582 794</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">✉️</div>
+          <div>
+            <h3 class="info-title">Official Electronic Mail</h3>
+            <p class="info-detail">
+              General Correspondence: <a href="mailto:henitenc@gmail.com" style="font-weight:600;color:var(--teal-600)">henitenc@gmail.com</a><br>
+              Tenders & Tendering BOQ: <a href="mailto:tenders@heniten.com" style="font-weight:600;color:var(--teal-600)">tenders@heniten.com</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">🕒</div>
+          <div>
+            <h3 class="info-title">Working Hours</h3>
+            <p class="info-detail">
+              Monday – Friday: 8:00 AM – 5:30 PM (EAT)<br>
+              Saturday: 8:00 AM – 1:00 PM<br>
+              24/7 On-Site Emergency Contractor Dispatch
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Contact Form -->
+      <div class="contact-form-panel reveal-right">
+        <h3 style="font-size:22px;color:var(--navy-850);margin-bottom:8px">Submit Your Project Brief</h3>
+        <p style="color:var(--slate-700);font-size:14.5px;margin-bottom:24px">
+          Our senior civil engineers will review your drawings, BOQ, or project specifications.
+        </p>
+
+        <form id="contactDirectForm">
+          <div class="form-group">
+            <label class="form-label" for="contactName">Full Name / Organization *</label>
+            <input type="text" id="contactName" class="form-input" placeholder="e.g. Dawit Tadesse (TAF Holdings)" required>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="form-group">
+              <label class="form-label" for="contactPhone">Phone Number *</label>
+              <input type="tel" id="contactPhone" class="form-input" placeholder="+251 ..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="name@company.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactType">Project Type</label>
+            <select id="contactType" class="form-select">
+              <option value="Fuel Station Facilities">Fuel Station / Canopy Network</option>
+              <option value="Commercial Multi-Storey">Commercial Multi-Storey (G+N)</option>
+              <option value="Industrial Factory">Industrial Factory / Warehouse</option>
+              <option value="Residential Development">Residential / Townhomes</option>
+              <option value="Aviation Depot">Aviation / Bulk Terminal</option>
+              <option value="Other Civil Works">General Civil Works</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contactMsg">Project Overview & Location *</label>
+            <textarea id="contactMsg" class="form-textarea" placeholder="Outline estimated square footage, target location, expected start date, or specific engineering requirements..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Send Request to Engineering Bureau</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div>
+        <img src="assets/images/logo-white.svg" alt="Heniten Construction" style="height:44px;margin-bottom:20px">
+        <p style="font-size:14.5px;line-height:1.7;color:var(--text-light-muted);max-width:340px">
+          Heniten Construction PLC is a premier Grade 5 (BC-6) registered general building and civil contractor delivering national energy infrastructure, high-rise towers, and industrial manufacturing complexes across Ethiopia.
+        </p>
+        <div style="margin-top:20px;font-size:13px;color:var(--gold-400);font-weight:600">
+          LICENSE: GRADE 5 BC-6 · MUDC REGISTERED
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Core Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services" class="footer-link">Building Contracting</a></li>
+          <li><a href="#services" class="footer-link">Commercial High-Rise</a></li>
+          <li><a href="#services" class="footer-link">Industrial Steel Trusses</a></li>
+          <li><a href="#services" class="footer-link">Fuel Station Facilities</a></li>
+          <li><a href="#services" class="footer-link">Aviation Bulk Depots</a></li>
+          <li><a href="#services" class="footer-link">Design-Build EPC</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Selected Projects</h4>
+        <ul class="footer-links">
+          <li><a href="#projects" class="footer-link">Jet A-1 Aviation Depot</a></li>
+          <li><a href="#projects" class="footer-link">SOTEN Manufacturing Plant</a></li>
+          <li><a href="#projects" class="footer-link">TAF Energies Corporate G+6</a></li>
+          <li><a href="#projects" class="footer-link">Dealers Retail Canopies</a></li>
+          <li><a href="#projects" class="footer-link">Bole Luxury Townhomes</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Contact & Head Office</h4>
+        <div style="font-size:14px;line-height:1.8;color:var(--text-light-muted)">
+          Wello Sefer, China Street<br>
+          TAF Head Quarter, Addis Ababa<br>
+          Phone: +251 991 999 501<br>
+          Office: +251 115 582 794<br>
+          Email: henitenc@gmail.com
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2013 – 2026 Heniten Construction PLC. All rights reserved. Addis Ababa, Ethiopia.</div>
+      <div style="display:flex;gap:24px">
+        <a href="#" class="footer-link">Quality Policy</a>
+        <a href="#" class="footer-link">HSE Charter</a>
+        <a href="#" class="footer-link">Terms of Service</a>
+        <a href="#" class="footer-link">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       CIRCULAR BACK-TO-TOP INDICATOR & FLOATING ACTIONS
+       ========================================================================== -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">
+    <svg class="progress-ring" width="46" height="46" viewBox="0 0 46 46">
+      <circle class="progress-ring-circle-bg" stroke="rgba(255,255,255,0.18)" stroke-width="3" fill="transparent" r="19" cx="23" cy="23"/>
+      <circle class="progress-ring-circle" id="progressRingCircle" stroke="var(--gold-500)" stroke-width="3" stroke-linecap="round" fill="transparent" r="19" cx="23" cy="23"/>
+    </svg>
+    <svg class="arrow-up-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       FLOATING ACTION BUTTON & MOBILE ACTION BAR
+       ========================================================================== -->
+  <button type="button" class="fab-quote" data-open-rfp="fab" aria-label="Get a Quote">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+    <span>Request a Quote</span>
+  </button>
+
+  <div class="mobile-bottom-bar" aria-label="Mobile Quick Actions">
+    <div class="mobile-bar-inner">
+      <a href="tel:+251991999501" class="mobile-bar-btn">
+        <span>📞</span>
+        <span>Call</span>
+      </a>
+      <a href="https://wa.me/251991999501" target="_blank" rel="noopener" class="mobile-bar-btn">
+        <span>💬</span>
+        <span>WhatsApp</span>
+      </a>
+      <a href="#calculator" class="mobile-bar-btn">
+        <span>⚡</span>
+        <span>Estimator</span>
+      </a>
+      <button type="button" class="mobile-bar-btn quote-highlight" data-open-rfp="mobile-bar">
+        <span>📋</span>
+        <span>Quote</span>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       PROJECT DETAIL / CASE STUDY MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="projectModal" aria-modal="true" role="dialog">
+    <div class="modal-box">
+      <button type="button" class="modal-close-btn" id="closeProjectModal" aria-label="Close Case Study">×</button>
+      
+      <div style="height:360px;position:relative;background:#0C0F29">
+        <img id="modalProjectImg" src="" alt="Project Photo" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(12,15,41,0.9) 100%)"></div>
+      </div>
+
+      <div style="padding:36px">
+        <div class="badge badge-gold" id="modalProjectCategory" style="margin-bottom:12px">CATEGORY</div>
+        <h3 id="modalProjectTitle" style="font-size:30px;color:var(--navy-850);margin-bottom:14px">Project Title</h3>
+
+        <div style="display:flex;gap:24px;flex-wrap:wrap;font-size:14px;color:var(--slate-600);margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--slate-200)">
+          <div><strong>Location:</strong> <span id="modalProjectLocation">Addis Ababa</span></div>
+          <div><strong>Client:</strong> <span id="modalProjectClient">Client</span></div>
+          <div><strong>Timeline:</strong> <span id="modalProjectYear">Year</span></div>
+        </div>
+
+        <h4 style="font-size:17px;color:var(--navy-850);margin-bottom:10px">Technical Specifications & Engineering Metrics</h4>
+        <div id="modalProjectSpecs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:28px"></div>
+
+        <h4 style="font-size:17px;color:var(--navy-850);margin-bottom:10px">Project Overview & Engineering Highlights</h4>
+        <p id="modalProjectDesc" style="color:var(--slate-700);line-height:1.7;margin-bottom:20px;font-size:15.5px"></p>
+
+        <h4 style="font-size:17px;color:var(--navy-850);margin-bottom:8px">Scope Delivered</h4>
+        <p id="modalProjectScope" style="color:var(--slate-700);line-height:1.6;font-size:14.5px;margin-bottom:32px"></p>
+
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <button type="button" class="btn btn-primary" data-open-rfp="case-study">Inquire About Similar Project</button>
+          <button type="button" class="btn btn-outline-dark" onclick="document.getElementById('projectModal').classList.remove('active');document.body.style.overflow='';">Close Case Study</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       REQUEST FOR QUOTATION (RFP) FORM MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="rfpModal" aria-modal="true" role="dialog">
+    <div class="modal-box" style="max-width:680px">
+      <button type="button" class="modal-close-btn" id="closeRfpModal" aria-label="Close Quotation Request">×</button>
+
+      <div style="padding:40px">
+        <div class="badge badge-gold" style="margin-bottom:12px">OFFICIAL TENDER & QUOTATION</div>
+        <h3 style="font-size:26px;color:var(--navy-850);margin-bottom:8px">Request a Comprehensive Quotation</h3>
+        <p style="color:var(--slate-700);font-size:15px;line-height:1.6;margin-bottom:24px">
+          Submit your tender specifications to Heniten Construction PLC. Our estimating bureau in Wello Sefer will formulate an official proposal within one business day.
+        </p>
+
+        <form id="rfpForm">
+          <div class="form-group">
+            <label class="form-label" for="rfpName">Client / Company Name *</label>
+            <input type="text" id="rfpName" class="form-input" placeholder="Organization or Individual Name" required>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="form-group">
+              <label class="form-label" for="rfpPhone">Phone Number *</label>
+              <input type="tel" id="rfpPhone" class="form-input" placeholder="+251 ..." required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rfpEmail">Email Address</label>
+              <input type="email" id="rfpEmail" class="form-input" placeholder="tenders@organization.com">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="form-group">
+              <label class="form-label" for="rfpType">Project Category *</label>
+              <select id="rfpType" name="projectType" class="form-select">
+                <option value="fuel-station">Fuel Station Forecourt</option>
+                <option value="commercial">Commercial Building (G+N)</option>
+                <option value="industrial">Industrial Factory / Warehouse</option>
+                <option value="residential">Residential Enclave</option>
+                <option value="aviation">Aviation / Bulk Terminal</option>
+                <option value="civil">General Civil Engineering</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="rfpLocation">Site Location *</label>
+              <input type="text" id="rfpLocation" class="form-input" placeholder="e.g. Addis Ababa / Hawassa" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="rfpNotes">Project Details & Calculated Parameters</label>
+            <textarea id="rfpNotes" name="projectNotes" class="form-textarea" placeholder="Detail any specific structural spans, number of storeys, target timeline, or attach link to BOQ / AutoCAD drawings..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Submit Official Request to Chief Estimator</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SERVICE DETAILS SPECIFICATION MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="serviceDetailModal" aria-modal="true" role="dialog">
+    <div class="modal-box" style="max-width:640px">
+      <button type="button" class="modal-close-btn" id="closeServiceModal" aria-label="Close Service Specification">×</button>
+      <div style="padding:40px">
+        <div class="badge badge-teal" id="serviceModalCode" style="margin-bottom:12px">SERVICE SPECIFICATION</div>
+        <h3 id="serviceModalTitle" style="font-size:26px;color:var(--navy-850);margin-bottom:6px">Service Name</h3>
+        <div id="serviceModalSubtitle" style="font-size:14px;font-weight:600;color:var(--teal-600);margin-bottom:20px">Subtitle</div>
+        <p id="serviceModalDesc" style="color:var(--slate-700);line-height:1.7;font-size:15.5px;margin-bottom:24px"></p>
+
+        <h4 style="font-size:16px;color:var(--navy-850);margin-bottom:12px">Key Deliverables & Accreditations</h4>
+        <ul id="serviceModalList" style="list-style:none;padding:0;margin-bottom:32px;font-size:14.5px;color:var(--slate-700)"></ul>
+
+        <div style="display:flex;gap:16px">
+          <button type="button" class="btn btn-primary" data-open-rfp="service-modal">Inquire for this Service</button>
+          <button type="button" class="btn btn-outline-dark" onclick="document.getElementById('serviceDetailModal').classList.remove('active');document.body.style.overflow='';">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Main Application Script -->

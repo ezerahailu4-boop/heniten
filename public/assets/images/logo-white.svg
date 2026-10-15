@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="420" height="80" fill="none">
+  <!-- Architectural Crane & Foundation Mark -->
+  <g id="brand-mark">
+    <!-- Light Base Block -->
+    <rect x="8" y="52" width="58" height="18" rx="2" fill="#FDB913" fill-opacity="0.15" stroke="#FDB913" stroke-width="1.5"/>
+    <!-- Yellow Tower Mast -->
+    <path d="M22 52L22 14M38 52L38 14" stroke="#FDB913" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Truss Cross Bracing -->
+    <path d="M22 50L38 40M38 50L22 40M22 40L38 30M38 40L22 30M22 30L38 20M38 30L22 20M22 20L38 14M38 20L22 14" stroke="#FDB913" stroke-width="1.6" stroke-opacity="0.85"/>
+    <!-- Crane Top Jib -->
+    <path d="M12 14H68" stroke="#FDB913" stroke-width="3" stroke-linecap="round"/>
+    <!-- Crane Cable & Hook Block -->
+    <path d="M54 14V32" stroke="#2FA4C7" stroke-width="1.8" stroke-dasharray="2 1.5"/>
+    <rect x="50" y="32" width="8" height="6" rx="1" fill="#FDB913"/>
+    <path d="M54 38C54 41 51 43 51 45" stroke="#FDB913" stroke-width="2" stroke-linecap="round"/>
+    <!-- Stepped Building Outline Behind -->
+    <path d="M38 28H50V52H38V28Z" fill="#2FA4C7" fill-opacity="0.3" stroke="#2FA4C7" stroke-width="1.2"/>
+    <circle cx="22" cy="14" r="2.5" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Typography -->
+  <g id="brand-text">
+    <text x="82" y="44" font-family="'Outfit', 'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="34" letter-spacing="0.06em" fill="#FFFFFF">HENITEN</text>
+    <rect x="83" y="52" width="22" height="3.5" fill="#FDB913"/>
+    <text x="112" y="56" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="11.5" letter-spacing="0.28em" fill="#FDB913">CONSTRUCTION PLC</text>
+    <text x="83" y="68" font-family="'JetBrains Mono', 'Plus Jakarta Sans', monospace" font-weight="600" font-size="9" letter-spacing="0.16em" fill="#A5ADCF">GRADE 5 BC-6 LICENSED · ADDIS ABABA</text>
+  </g>
+</svg>
