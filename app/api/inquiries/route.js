@@ -19,6 +19,9 @@ export async function POST(req) {
   const phone = pick(/phone|tel/i), email = pick(/e-?mail/i);
   if (!name || !(phone || email)) return bad('Please provide your name and a phone number or email.');
   const ip = createHash('sha256').update((req.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim()).digest('hex').slice(0, 24);
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    return bad('Database configuration missing on server.', 503);
+  }
   const sb = admin();
   const { count } = await sb.from('inquiries').select('id', { count: 'exact', head: true }).eq('ip', ip).gte('created_at', new Date(Date.now() - 36e5).toISOString());
   if ((count || 0) >= 5) return bad('Too many requests. Please try again later.', 429);
