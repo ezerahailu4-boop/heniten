@@ -520,7 +520,7 @@
     }
 
     // 2.6 Interactive 3D Perspective Card Tilt & Mouse Spotlight Sheen
-    const tiltCards = document.querySelectorAll('.tilt-card, .project-card, .why-card, .process-step-card, .calc-panel');
+    const tiltCards = document.querySelectorAll('.tilt-card, .project-card, .why-card, .process-step-card, .calc-panel, .insight-card');
     tiltCards.forEach(card => {
       card.addEventListener('pointermove', e => {
         const rect = card.getBoundingClientRect();

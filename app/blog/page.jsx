@@ -31,6 +31,50 @@ export default async function BlogIndexPage() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#080e1b', color: '#f1f5f9', fontFamily: 'Outfit, system-ui, sans-serif' }}>
+      <style>{`
+        .tilt-card {
+          perspective: 1000px;
+          transform-style: preserve-3d;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+          position: relative;
+        }
+        .tilt-card::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background: radial-gradient(450px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(253, 185, 19, 0.16), transparent 45%);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.35s ease;
+          z-index: 5;
+        }
+        .tilt-card:hover::before {
+          opacity: 1;
+        }
+        .tilt-card:hover {
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+          border-color: rgba(253, 185, 19, 0.5) !important;
+        }
+        .reveal-up {
+          opacity: 0;
+          transform: translateY(30px);
+          filter: blur(6px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.is-revealed {
+          opacity: 1;
+          transform: translateY(0);
+          filter: blur(0);
+        }
+        .stagger-container > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger-container > *:nth-child(2) { transition-delay: 0.12s; }
+        .stagger-container > *:nth-child(3) { transition-delay: 0.19s; }
+        .stagger-container > *:nth-child(4) { transition-delay: 0.26s; }
+        .stagger-container > *:nth-child(5) { transition-delay: 0.33s; }
+        .stagger-container > *:nth-child(6) { transition-delay: 0.40s; }
+      `}</style>
+
       {/* Blog Top Header */}
       <header style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(13,24,43,0.85)', backdropFilter: 'blur(12px)', position: 'sticky', top: 0, zIndex: 50, padding: '16px 24px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
@@ -95,6 +139,7 @@ export default async function BlogIndexPage() {
 
             <Link
               href={`/blog/${featuredPost.slug}`}
+              className="tilt-card reveal-up"
               style={{
                 textDecoration: 'none',
                 display: 'grid',
@@ -104,7 +149,6 @@ export default async function BlogIndexPage() {
                 borderRadius: '16px',
                 overflow: 'hidden',
                 boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
-                transition: 'transform 0.25s ease, border-color 0.25s ease',
               }}
             >
               <div style={{ position: 'relative', minHeight: '340px' }}>
@@ -160,11 +204,12 @@ export default async function BlogIndexPage() {
             <p style={{ color: '#64748b' }}>Check back shortly or visit the admin portal to publish content.</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '28px' }}>
+          <div className="stagger-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '28px' }}>
             {regularPosts.map(post => (
               <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
+                className="tilt-card reveal-up"
                 style={{
                   textDecoration: 'none',
                   background: '#0d182b',
@@ -173,7 +218,6 @@ export default async function BlogIndexPage() {
                   overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
-                  transition: 'transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
                 }}
               >
                 <div style={{ height: '220px', position: 'relative', background: '#152238' }}>
@@ -249,6 +293,53 @@ export default async function BlogIndexPage() {
           </div>
         </div>
       </footer>
+
+      {/* Interactive 3D Perspective Card Tilt & Scroll Reveal Observer */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('DOMContentLoaded', function() {
+              // Scroll reveal
+              var reveals = document.querySelectorAll('.reveal-up');
+              if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function(entries, obs) {
+                  entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add('is-revealed');
+                      obs.unobserve(entry.target);
+                    }
+                  });
+                }, { threshold: 0.1 });
+                reveals.forEach(function(el) { observer.observe(el); });
+              } else {
+                reveals.forEach(function(el) { el.classList.add('is-revealed'); });
+              }
+
+              // 3D Perspective Tilt & Mouse Spotlight
+              var tiltCards = document.querySelectorAll('.tilt-card');
+              tiltCards.forEach(function(card) {
+                card.addEventListener('pointermove', function(e) {
+                  var rect = card.getBoundingClientRect();
+                  var x = e.clientX - rect.left;
+                  var y = e.clientY - rect.top;
+                  var centerX = rect.width / 2;
+                  var centerY = rect.height / 2;
+                  var rotateX = ((y - centerY) / centerY) * -5;
+                  var rotateY = ((x - centerX) / centerX) * 5;
+
+                  card.style.setProperty('--mouse-x', x.toFixed(1) + 'px');
+                  card.style.setProperty('--mouse-y', y.toFixed(1) + 'px');
+                  card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-8px)';
+                });
+
+                card.addEventListener('pointerleave', function() {
+                  card.style.transform = '';
+                });
+              });
+            });
+          `,
+        }}
+      />
     </div>
   );
 }
