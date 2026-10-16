@@ -2,6 +2,7 @@ import { sql } from '@/lib/db';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { marked } from 'marked';
+import ProjectEstimator from '@/components/ProjectEstimator';
 
 export const dynamic = 'force-dynamic';
 
@@ -225,6 +226,9 @@ export default async function BlogPostPage({ params }) {
             </a>
           </div>
         </div>
+
+        {/* Interactive Scope & Quotation Estimator */}
+        <ProjectEstimator />
 
         {/* Related Articles */}
         {related.length > 0 && (

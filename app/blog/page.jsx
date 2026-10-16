@@ -1,5 +1,6 @@
 import { sql } from '@/lib/db';
 import Link from 'next/link';
+import ProjectEstimator from '@/components/ProjectEstimator';
 
 export const dynamic = 'force-dynamic';
 
@@ -89,7 +90,7 @@ export default async function BlogIndexPage() {
             <Link href="/#projects" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}>
               Projects
             </Link>
-            <Link href="/#calculator" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}>
+            <Link href="#estimator" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}>
               Cost Estimator
             </Link>
             <Link href="/#contact" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '14px', fontWeight: '500' }}>
@@ -255,6 +256,9 @@ export default async function BlogIndexPage() {
             ))}
           </div>
         )}
+
+        {/* Interactive Project Quotation & Scope Estimator */}
+        <ProjectEstimator />
 
         {/* Bottom CTA Banner */}
         <div style={{ marginTop: '80px', padding: '48px 40px', background: 'radial-gradient(circle at 10% 50%, #172744 0%, #0d182b 100%)', borderRadius: '16px', border: '1px solid rgba(253,185,19,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '24px' }}>
