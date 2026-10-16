@@ -138,6 +138,7 @@
     initQuoteCalculator();
     initRFPModal();
     initServiceModals();
+    initPolicyModals();
   });
 
   /* ==========================================================================
@@ -971,6 +972,95 @@
             </li>
           `).join('');
         }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  /* ==========================================================================
+     CORPORATE POLICY & GOVERNANCE MODAL HANDLER
+     ========================================================================== */
+  function initPolicyModals() {
+    const modal = document.getElementById('policyModal');
+    const closeBtn = document.getElementById('closePolicyModal');
+    const badgeEl = document.getElementById('policyModalBadge');
+    const titleEl = document.getElementById('policyModalTitle');
+    const subtitleEl = document.getElementById('policyModalSubtitle');
+    const bodyEl = document.getElementById('policyModalBody');
+    const triggerButtons = document.querySelectorAll('[data-open-policy]');
+
+    if (!modal) return;
+
+    const policyData = {
+      quality: {
+        badge: 'QUALITY ASSURANCE & STANDARDS',
+        title: 'Quality Management Policy',
+        subtitle: 'EBCS, BS, ASTM & AASHTO Construction Compliance',
+        body: `
+          <p>Heniten Construction PLC is committed to delivering structural civil works that strictly conform to Ethiopian Building Code Standards (EBCS) and international ASTM benchmarks.</p>
+          <ul style="padding-left:20px;margin:16px 0">
+            <li style="margin-bottom:8px"><strong>Concrete Quality Control:</strong> Every batch of on-site and ready-mix concrete undergoes mandatory slump testing and 7-day / 28-day laboratory compressive strength cube crushing.</li>
+            <li style="margin-bottom:8px"><strong>Structural Steel Verification:</strong> All structural members, rebar tensile strength, and welded joints undergo ultrasonic testing (NDT) by certified engineers.</li>
+            <li style="margin-bottom:8px"><strong>Material Traceability:</strong> Only certified Grade 60 de-bar rebar and ASTM C150 Portland cement are procured from approved mills.</li>
+          </ul>
+        `
+      },
+      hse: {
+        badge: 'HEALTH, SAFETY & ENVIRONMENT',
+        title: 'HSE Operational Charter',
+        subtitle: 'Target: Zero Lost-Time Injury (LTI) Standard',
+        body: `
+          <p>At Heniten Construction, the safety of our workforce, subcontractors, and surrounding communities is our highest priority.</p>
+          <ul style="padding-left:20px;margin:16px 0">
+            <li style="margin-bottom:8px"><strong>Zero Harm Vision:</strong> Our target across every high-rise, industrial plant, and fuel depot project is zero fatalities and zero lost-time injuries.</li>
+            <li style="margin-bottom:8px"><strong>Mandatory PPE:</strong> Hard hats, steel-toed boots, high-visibility vests, and eye protection are enforced 100% on site.</li>
+            <li style="margin-bottom:8px"><strong>Fall Protection:</strong> Daily safety inspections of steel tubular scaffolding, guardrails, and harness tie-off points before every shift.</li>
+            <li style="margin-bottom:8px"><strong>Environmental Containment:</strong> Fuel depot sites employ specialized double-walled secondary containment and oil-water interceptors to safeguard soil and water tables.</li>
+          </ul>
+        `
+      },
+      terms: {
+        badge: 'CONTRACTUAL GOVERNANCE',
+        title: 'Commercial Terms & Tender Guidelines',
+        subtitle: 'FIDIC & Public Procurement Conformance',
+        body: `
+          <p>Key commercial stipulations governing client quotations and tenders executed by Heniten Construction PLC:</p>
+          <ul style="padding-left:20px;margin:16px 0">
+            <li style="margin-bottom:8px"><strong>Quotation Validity:</strong> Official engineering proposals and BOQ estimates remain valid for 30 calendar days from issuance.</li>
+            <li style="margin-bottom:8px"><strong>Contract Conditions:</strong> Project contracts adhere to standard Ethiopian Ministry of Urban Development & Construction (MUDC) and FIDIC conditions of contract.</li>
+            <li style="margin-bottom:8px"><strong>Confidentiality:</strong> Client drawings, structural calculations, and tender bills of quantities submitted through this portal are treated as strictly confidential proprietary engineering assets.</li>
+          </ul>
+        `
+      }
+    };
+
+    triggerButtons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const type = btn.getAttribute('data-open-policy');
+        const data = policyData[type];
+        if (!data) return;
+
+        if (badgeEl) badgeEl.textContent = data.badge;
+        if (titleEl) titleEl.textContent = data.title;
+        if (subtitleEl) subtitleEl.textContent = data.subtitle;
+        if (bodyEl) bodyEl.innerHTML = data.body;
 
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
