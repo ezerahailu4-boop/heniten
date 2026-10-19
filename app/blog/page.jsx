@@ -297,7 +297,7 @@ export default async function BlogIndexPage() {
       {/* Footer */}
       <footer style={{ borderTop: '1px solid #1e293b', background: '#050912', padding: '40px 24px', textAlign: 'center', fontSize: '13.5px', color: '#64748b' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <div>© {new Date().getFullYear()} Heniten Construction PLC. Grade 5 (BC-6) Licensed Contractor. Addis Ababa, Ethiopia.</div>
+          <div>© {new Date().getFullYear()} Heniten Construction PLC. Grade 2 (BC-2) Licensed Contractor. Addis Ababa, Ethiopia.</div>
           <div style={{ display: 'flex', gap: '20px' }}>
             <Link href="/" style={{ color: '#94a3b8', textDecoration: 'none' }}>Home</Link>
             <Link href="/blog" style={{ color: '#fdb913', textDecoration: 'none' }}>Articles</Link>

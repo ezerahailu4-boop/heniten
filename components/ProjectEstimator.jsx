@@ -266,7 +266,7 @@ export default function ProjectEstimator() {
                 {calculation.lowFormatted} - {calculation.highFormatted}
               </div>
               <p style={{ color: '#64748b', fontSize: '12.5px', lineHeight: '1.5', margin: '0 0 24px' }}>
-                Indicative rate based on 2026 Grade 5 BC-6 benchmarks in Addis Ababa and surrounding corridors.
+                Indicative rate based on 2026 Grade 2 BC-2 benchmarks in Addis Ababa and surrounding corridors.
               </p>
 
               {/* Breakdown List */}
@@ -285,7 +285,7 @@ export default function ProjectEstimator() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13.5px' }}>
                   <span style={{ color: '#94a3b8' }}>Supervision Grade:</span>
-                  <strong style={{ color: '#38bdf8' }}>BC-6 Grade 5 Licensed</strong>
+                  <strong style={{ color: '#38bdf8' }}>BC-2 Grade 2 Licensed</strong>
                 </div>
               </div>
             </div>

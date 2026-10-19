@@ -821,7 +821,7 @@
     if (bTypeEl) bTypeEl.textContent = config.label;
     if (bAreaEl) bAreaEl.textContent = area.toLocaleString() + ' m²';
     if (bTimelineEl) bTimelineEl.textContent = config.avgTimeline;
-    if (bLicenseEl) bLicenseEl.textContent = 'BC-6 Grade 5 Supervision';
+    if (bLicenseEl) bLicenseEl.textContent = 'BC-2 Grade 2 Supervision';
   }
 
   function formatCompactCurrency(val, isUSD) {
@@ -915,7 +915,7 @@
     const servicesDetailData = {
       '01': {
         title: 'Building Contracting & Civil Engineering',
-        subtitle: 'Grade 5 BC-6 Government Licensed Contractor',
+        subtitle: 'Grade 2 BC-2 Government Licensed Contractor',
         description: 'Complete general contracting services encompassing structural concrete, foundation engineering, earthworks, and high-rise core execution adhering strictly to Ethiopian Building Code Standards (EBCS).',
         deliverables: ['Full BOQ Preparation & Cost Planning', 'On-Site Resident Civil Engineers', 'Batch-plant Concrete Testing & Slump Verification', 'Critical Path Method (CPM) Schedule Tracking']
       },

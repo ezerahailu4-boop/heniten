@@ -1,6 +1,6 @@
 # Heniten Construction PLC – Next.js + Neon Postgres
 
-High-performance digital presence, quotation engine, engineering blog, and management console for Heniten Construction PLC (Grade 5 BC-6 licensed contractor in Addis Ababa, Ethiopia).
+High-performance digital presence, quotation engine, engineering blog, and management console for Heniten Construction PLC (Grade 2 BC-2 licensed contractor in Addis Ababa, Ethiopia).
 
 ## Features
 - **Cinematic Homepage**: Daylight architectural slides, real-time welding spark atmospheric canvas, dynamic cost estimator, interactive 5-category portfolio case studies.
