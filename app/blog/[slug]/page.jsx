@@ -219,16 +219,24 @@ export default async function BlogPostPage({ params }) {
               Request Official Quotation →
             </Link>
             <a
-              href="tel:+251991999501"
+              href="tel:+251966118312"
               style={{ background: '#080e1b', color: '#fff', border: '1px solid #243553', padding: '12px 20px', borderRadius: '8px', fontWeight: '600', textDecoration: 'none', fontSize: '14px' }}
             >
-              📞 Call Addis Ababa Bureau: +251 991 999 501
+              📞 Call Addis Ababa Bureau: +251 966 118 312
+            </a>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=TAF+Oil+Headquarters,+Wello+Sefer,+Addis+Ababa,+Ethiopia"
+              target="_blank"
+              rel="noopener"
+              style={{ background: '#080e1b', color: '#fdb913', border: '1px solid rgba(253,185,19,0.3)', padding: '12px 20px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}
+            >
+              📍 Route to Office ↗
             </a>
           </div>
         </div>
 
-        {/* Interactive Scope & Quotation Estimator */}
-        <ProjectEstimator />
+        {/* Interactive Scope & Quotation Estimator (Commented Out) */}
+        {/* <ProjectEstimator /> */}
 
         {/* Related Articles */}
         {related.length > 0 && (

@@ -81,7 +81,7 @@ export async function POST(req) {
 
     const count = rateCheck[0]?.count || 0;
     if (count >= 5) {
-      return bad('Too many requests. Please try again later or call +251 991 999 501.', 429);
+      return bad('Too many requests. Please try again later or call +251 966 118 312.', 429);
     }
 
     const ref = 'HN-' + Math.floor(100000 + Math.random() * 900000);
@@ -100,7 +100,7 @@ export async function POST(req) {
     return NextResponse.json({ ref: row.ref });
   } catch (err) {
     console.error('Inquiry error:', err);
-    return bad('Could not save your request. Please try again or call +251 991 999 501 directly.', 500);
+    return bad('Could not save your request. Please try again or call +251 966 118 312 directly.', 500);
   }
 }
 

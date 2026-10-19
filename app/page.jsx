@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import Legacy from '@/components/Legacy';
-const ld = { '@context': 'https://schema.org', '@type': 'GeneralContractor', name: 'Heniten Construction PLC', telephone: '+251991999501', email: 'henitenc@gmail.com', address: { '@type': 'PostalAddress', addressLocality: 'Addis Ababa', addressCountry: 'ET' } };
+const ld = { '@context': 'https://schema.org', '@type': 'GeneralContractor', name: 'Heniten Construction PLC', telephone: '+251966118312', email: 'henitenc@gmail.com', address: { '@type': 'PostalAddress', addressLocality: 'Addis Ababa', addressCountry: 'ET' } };
 export default function Home() {
   const html = fs.readFileSync(path.join(process.cwd(), 'content', 'body.html'), 'utf8');
   return (<>
