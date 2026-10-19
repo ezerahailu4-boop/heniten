@@ -717,57 +717,103 @@ button, input, select, textarea {
   pointer-events: none;
 }
 
-/* Modern Hero Slideshow Navigation & Controls - Frosted Dark Glass Capsule */
-.hero-slideshow-nav {
-  position: absolute;
-  bottom: 120px;
-  right: 48px;
+/* Hero Top Bar: Aligns Location Pill & Slideshow Nav on Top */
+.hero-top-bar {
+  position: relative;
   z-index: 10;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
-  background: rgba(12, 16, 42, 0.8);
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+/* Modern Hero Slideshow Navigation & Controls - Frosted Dark Glass Capsule On Top */
+.hero-slideshow-nav {
+  position: relative;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(10, 14, 38, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 12px 20px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-slideshow-nav:hover {
+  border-color: rgba(253, 185, 19, 0.35);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
 }
 
 .slideshow-pagination {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 6px;
 }
 
 .slide-indicator {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 4px 0;
-  color: #475569;
-  transition: color 0.25s;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: left;
+}
+
+.slide-indicator:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.slide-indicator.active {
+  background: rgba(253, 185, 19, 0.1);
 }
 
 .indicator-number {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  color: var(--gold-400);
+  line-height: 1;
+}
+
+.indicator-title {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.slide-indicator:hover .indicator-title,
+.slide-indicator.active .indicator-title {
   color: #FFFFFF;
 }
 
 .indicator-bar {
-  width: 44px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 2.5px;
+  background: rgba(255, 255, 255, 0.16);
   border-radius: 2px;
   overflow: hidden;
   position: relative;
+  margin-top: 3px;
 }
 
 .indicator-progress {
@@ -776,7 +822,7 @@ button, input, select, textarea {
   left: 0;
   height: 100%;
   width: 0%;
-  background: var(--gold-500);
+  background: linear-gradient(90deg, #FDB913, #FFC942);
   border-radius: 2px;
 }
 
@@ -789,33 +835,19 @@ button, input, select, textarea {
   100% { width: 100%; }
 }
 
-.indicator-title {
-  font-family: var(--font-heading);
-  font-size: 11.5px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.slide-indicator:hover .indicator-title,
-.slide-indicator.active .indicator-title {
-  color: #FFC942;
-}
-
 .slideshow-arrow-btns {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-left: 14px;
+  gap: 6px;
+  padding-left: 10px;
   border-left: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .slide-arrow-btn {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #FFFFFF;
   display: flex;
@@ -833,15 +865,34 @@ button, input, select, textarea {
 }
 
 @media (max-width: 900px) {
+  .hero-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
   .hero-slideshow-nav {
-    bottom: 140px;
-    right: 24px;
-    left: 24px;
+    width: 100%;
     justify-content: space-between;
-    padding: 10px 16px;
+    padding: 6px 12px;
+  }
+  .slide-indicator {
+    padding: 4px 8px;
   }
   .indicator-title {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .indicator-title {
     display: none;
+  }
+  .slide-indicator {
+    padding: 4px 6px;
+  }
+  .indicator-bar {
+    width: 28px;
   }
 }
 
@@ -850,9 +901,10 @@ button, input, select, textarea {
   position: relative;
   z-index: 5;
   display: block;
-  max-width: 860px;
-  padding-bottom: 48px;
+  max-width: 1320px;
   width: 100%;
+  margin: 0 auto;
+  padding-bottom: 48px;
 }
 
 .hero-content {
