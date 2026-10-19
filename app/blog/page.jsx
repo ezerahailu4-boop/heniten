@@ -31,7 +31,7 @@ export default async function BlogIndexPage() {
   const regularPosts = posts.slice(1);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#080e1b', color: '#f1f5f9', fontFamily: 'Outfit, system-ui, sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: '#080e1b', color: '#f1f5f9', fontFamily: "'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif" }}>
       <style>{`
         .tilt-card {
           perspective: 1000px;

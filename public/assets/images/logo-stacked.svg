@@ -1,13 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 594 420" width="594" height="420" fill="none">
   <defs>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@900&amp;family=Montserrat:wght@900&amp;display=swap');
+      
+    @font-face {
+      font-family: 'Plus Jakarta Sans Embedded';
+      src: url('data:font/woff2;base64,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') format('woff2');
+      font-weight: 700 800;
+      font-style: normal;
+    }
+
       .brand-title {
-        font-family: 'Outfit', 'Montserrat', 'Plus Jakarta Sans', 'Arial Black', -apple-system, sans-serif;
-        font-weight: 900;
-        font-size: 19.5px;
+        font-family: 'Plus Jakarta Sans Embedded', 'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif;
+        font-weight: 800;
+        font-size: 20px;
         letter-spacing: 0.08em;
-        fill: #2E67AC;
+        fill: #225C9E;
         text-anchor: middle;
       }
     </style>
@@ -62,6 +69,6 @@
 
   <!-- Brand Typography: HENITEN CONSTRUCTION -->
   <g id="brand-text">
-    <text x="289.5" y="354.5" class="brand-title">HENITEN CONSTRUCTION</text>
+    <text x="289.5" y="355" class="brand-title">HENITEN CONSTRUCTION</text>
   </g>
 </svg>

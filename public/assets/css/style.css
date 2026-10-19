@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
 /* ==========================================================================
    HENITEN CONSTRUCTION PLC - ENTERPRISE STYLESHEET
@@ -65,9 +65,9 @@
 }
 
 :root {
-  --font-display: 'Syne', 'Outfit', sans-serif;
-  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 }
 
@@ -92,21 +92,22 @@ body {
 h1, h2, h3, h4, h5, h6, .font-heading {
   font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
   color: inherit;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .hero-title, .section-title, .cta-headline, .estimate-figure, .modal-title {
   font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 .stat-number, .step-number, .service-number {
   font-family: var(--font-display);
   font-weight: 800;
+  letter-spacing: -0.02em;
   font-feature-settings: 'tnum' 1;
 }
 
@@ -235,7 +236,7 @@ button, input, select, textarea {
 }
 
 .brand-logo {
-  height: 32px;
+  height: 36px;
   width: auto;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }

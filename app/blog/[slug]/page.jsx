@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }) {
   const htmlContent = marked.parse(post.content || '');
 
   return (
-    <div style={{ minHeight: '100vh', background: '#080e1b', color: '#f1f5f9', fontFamily: 'Outfit, system-ui, sans-serif' }}>
+    <div style={{ minHeight: '100vh', background: '#080e1b', color: '#f1f5f9', fontFamily: "'Plus Jakarta Sans', 'Outfit', system-ui, -apple-system, sans-serif" }}>
       {/* Blog Top Header */}
       <header style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(13,24,43,0.85)', backdropFilter: 'blur(12px)', position: 'sticky', top: 0, zIndex: 50, padding: '16px 24px' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
